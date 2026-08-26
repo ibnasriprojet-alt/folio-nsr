@@ -292,6 +292,50 @@
         });
     }
 
+    // ==================== PDF PREVIEW MODAL ====================
+    function initPdfModal() {
+        var modal = document.getElementById('pdfModal');
+        var modalClose = document.getElementById('modalClose');
+        var pdfFrame = document.getElementById('pdfFrame');
+        var modalTitle = document.getElementById('modalTitle');
+        var modalDownload = document.getElementById('modalDownload');
+        var previewBtns = document.querySelectorAll('[data-preview]');
+
+        if (!modal) return;
+
+        previewBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var file = this.getAttribute('data-preview');
+                var fileName = file.replace('.pdf', '').replace(/_/g, ' ');
+                pdfFrame.src = file;
+                modalTitle.textContent = fileName;
+                modalDownload.href = file;
+                modal.classList.add('active');
+                body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            body.style.overflow = '';
+            setTimeout(function () {
+                pdfFrame.src = '';
+            }, 300);
+        }
+
+        modalClose.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
+
     // ==================== COUNTER ANIMATION ====================
     function animateCounters() {
         var counters = document.querySelectorAll('[data-count]');
@@ -344,6 +388,7 @@
         initTiltCards();
         initFormEffects();
         initFormSubmission();
+        initPdfModal();
         initKeyboardNav();
 
         // Update indicator on resize
