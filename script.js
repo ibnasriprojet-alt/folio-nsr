@@ -187,14 +187,14 @@
                 var x = (e.clientX - rect.left) / rect.width;
                 var y = (e.clientY - rect.top) / rect.height;
 
-                var rotateX = (y - 0.5) * -8;
-                var rotateY = (x - 0.5) * 8;
+                var rotateX = (y - 0.5) * -2;
+                var rotateY = (x - 0.5) * 2;
 
-                card.style.transform = 'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-3px)';
+                card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
             });
 
             card.addEventListener('mouseleave', function () {
-                card.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+                card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
             });
         });
     }

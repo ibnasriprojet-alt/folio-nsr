@@ -140,8 +140,6 @@ input, textarea {
 .glass-card:hover {
     background: var(--bg-card-hover);
     border-color: var(--border-hover);
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-3px);
 }
 
 /* ==================== TUBELIGHT NAVBAR ==================== */
