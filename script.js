@@ -9,30 +9,43 @@
     // ==================== DOM + INIT ====================
     document.body.classList.add('loaded');
 
-    // ==================== NAVBAR SCROLL ====================
-    const navbar = document.getElementById('navbar');
-    function onScrollNav() {
-        navbar.classList.toggle('scrolled', window.scrollY > 40);
-    }
-    window.addEventListener('scroll', onScrollNav, { passive: true });
-    onScrollNav();
+    // ==================== TUBELIGHT NAVBAR ====================
+    const navItems = document.querySelectorAll('.nav-item');
+    const navInner = document.querySelector('.nav-inner');
+    const navIndicator = document.getElementById('navIndicator');
+    const navIndicatorGlow = document.getElementById('navIndicatorGlow');
 
-    // ==================== ACTIVE LINK (scroll spy) ====================
+    function updateIndicator(activeItem) {
+        if (!activeItem || !navIndicator || !navIndicatorGlow || !navInner) return;
+        const navRect = navInner.getBoundingClientRect();
+        const itemRect = activeItem.getBoundingClientRect();
+
+        const left = itemRect.left - navRect.left - 4;
+        const width = itemRect.width;
+
+        navIndicator.style.left = left + 'px';
+        navIndicator.style.width = width + 'px';
+
+        const glowCenterX = itemRect.left - navRect.left + itemRect.width / 2;
+        navIndicatorGlow.style.left = glowCenterX + 'px';
+    }
+
+    // ==================== ACTIVE SECTION (scroll spy) ====================
     const sections = ['accueil', 'competences', 'projets', 'contact'];
-    const navLinks = document.querySelectorAll('.nav-link');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function setActive(id) {
+        let activeItem = null;
+        navItems.forEach(function (item) {
+            const isActive = item.getAttribute('data-section') === id;
+            item.classList.toggle('active', isActive);
+            if (isActive) activeItem = item;
+        });
+        updateIndicator(activeItem);
+    }
 
     const spy = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                const id = entry.target.id;
-                navLinks.forEach(function (l) {
-                    l.classList.toggle('active', l.getAttribute('data-section') === id);
-                });
-                mobileLinks.forEach(function (l) {
-                    l.classList.toggle('active', l.getAttribute('data-section') === id);
-                });
-            }
+            if (entry.isIntersecting) setActive(entry.target.id);
         });
     }, { rootMargin: '-45% 0px -50% 0px' });
 
@@ -41,28 +54,20 @@
         if (el) spy.observe(el);
     });
 
-    // ==================== MOBILE MENU ====================
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    function toggleMenu(force) {
-        const open = typeof force === 'boolean' ? force : !mobileMenu.classList.contains('open');
-        mobileMenu.classList.toggle('open', open);
-        menuToggle.classList.toggle('open', open);
-        document.body.style.overflow = open ? 'hidden' : '';
-    }
-    menuToggle.addEventListener('click', function () { toggleMenu(); });
-
-    mobileMenu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () { toggleMenu(false); });
+    window.addEventListener('resize', function () {
+        const active = document.querySelector('.nav-item.active');
+        if (active) updateIndicator(active);
     });
+    setTimeout(function () {
+        const active = document.querySelector('.nav-item.active');
+        if (active) updateIndicator(active);
+    }, 60);
 
-    // close on escape
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            toggleMenu(false);
-            closeModal();
-        }
+    // smooth anchor clicks (keep default behavior, just ensure active set)
+    navItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            setActive(this.getAttribute('data-section'));
+        });
     });
 
     // ==================== REVEAL ON SCROLL ====================
@@ -175,6 +180,10 @@
     modalClose.addEventListener('click', closeModal);
     modal.addEventListener('click', function (e) {
         if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
     });
 
     // ==================== TILT EFFECT (cards) ====================
