@@ -1,178 +1,154 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio NASRI</title>
-    <meta name="description" portfolio="Portfolio d'Ibrahim NASRI, étudiant BTS SIO SISR. Systèmes d'information, réseaux et virtualisation.">
+    <title>Portfolio NASRI — Ibrahim NASRI | BTS SIO SISR</title>
+    <meta name="description" content="Portfolio d'Ibrahim NASRI, étudiant BTS SIO SISR. Systèmes d'information, réseaux, virtualisation et cybersécurité.">
+    <meta name="theme-color" content="#07090e">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- TUBELIGHT NAVBAR -->
-    <nav class="nav-wrapper" id="navbar">
-        <div class="nav-inner">
-            <div class="nav-indicator" id="navIndicator"></div>
-            <div class="nav-indicator-glow" id="navIndicatorGlow"></div>
-            <a href="#accueil" class="nav-item active" data-section="accueil">
-                <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                <span class="nav-label">Accueil</span>
-            </a>
-            <a href="#competences" class="nav-item" data-section="competences">
-                <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                <span class="nav-label">Compétences</span>
-            </a>
-            <a href="#projets" class="nav-item" data-section="projets">
-                <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                <span class="nav-label">Projets</span>
-            </a>
-            <a href="#contact" class="nav-item" data-section="contact">
-                <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <span class="nav-label">Contact</span>
-            </a>
-        </div>
-    </nav>
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar" id="navbar">
+        <a href="#accueil" class="brand" data-nav>
+            <span class="brand-dot"></span>
+            <span class="brand-text">ibri<span class="brand-accent">.nasri</span></span>
+        </a>
+        <nav class="nav-links">
+            <a href="#accueil" class="nav-link active" data-section="accueil">Accueil</a>
+            <a href="#competences" class="nav-link" data-section="competences">Compétences</a>
+            <a href="#projets" class="nav-link" data-section="projets">Projets</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
 
-    <!-- THEME TOGGLE -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
-        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
+    <!-- ==================== MOBILE MENU ==================== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#accueil" class="mobile-link" data-section="accueil">Accueil</a>
+        <a href="#competences" class="mobile-link" data-section="competences">Compétences</a>
+        <a href="#projets" class="mobile-link" data-section="projets">Projets</a>
+        <a href="#contact" class="mobile-link" data-section="contact">Contact</a>
+    </div>
 
-    <!-- ==================== ACCUEIL ==================== -->
-    <section id="accueil" class="page page--active">
-        <div class="container">
-            <div class="hero">
-                <div class="hero-content scroll-reveal">
-                    <span class="hero-badge">BTS SIO SISR</span>
-                    <h1 class="hero-title">Ibrahim<br><span class="text-accent">NASRI</span></h1>
-                    <p class="hero-subtitle">Étudiant en Systèmes d'Information et Réseaux. Passionné par l'infrastructure, la virtualisation et la cybersécurité.</p>
-                    <div class="hero-actions">
-                        <a href="#projets" class="btn btn-glass btn-glass-primary" data-nav>
-                            <span>Voir mes projets</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </a>
-                        <a href="#contact" class="btn btn-glass btn-glass-outline" data-nav>
-                            <span>Me contacter</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-visual scroll-reveal scroll-reveal--delay">
-                    <div class="avatar-container">
-                        <div class="avatar-ring"></div>
-                        <div class="avatar-glow"></div>
-                        <svg class="avatar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:var(--accent);stop-opacity:1"/>
-                                    <stop offset="100%" style="stop-color:var(--accent-light);stop-opacity:1"/>
-                                </linearGradient>
-                            </defs>
-                            <circle cx="100" cy="100" r="96" fill="url(#avatarGrad)" opacity="0.12"/>
-                            <circle cx="100" cy="100" r="96" fill="none" stroke="url(#avatarGrad)" stroke-width="2" opacity="0.4"/>
-                            <circle cx="100" cy="78" r="32" fill="url(#avatarGrad)" opacity="0.8"/>
-                            <ellipse cx="100" cy="155" rx="48" ry="38" fill="url(#avatarGrad)" opacity="0.8"/>
-                            <rect x="62" y="70" width="76" height="4" rx="2" fill="var(--accent)" opacity="0.15"/>
-                            <circle cx="85" cy="74" r="3" fill="var(--accent)" opacity="0.6"/>
-                            <circle cx="115" cy="74" r="3" fill="var(--accent)" opacity="0.6"/>
-                            <path d="M88 92 Q100 102 112 92" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-                            <rect x="68" y="108" width="64" height="2" rx="1" fill="var(--accent)" opacity="0.1"/>
-                            <rect x="74" y="114" width="52" height="2" rx="1" fill="var(--accent)" opacity="0.08"/>
-                        </svg>
-                    </div>
-                </div>
+    <!-- ==================== HERO 3D ==================== -->
+    <section id="accueil" class="hero">
+        <div id="three-canvas" class="three-canvas" aria-hidden="true"></div>
+
+        <!-- Animated backdrop layers -->
+        <div class="backdrop-grid"></div>
+        <div class="backdrop-vignette"></div>
+
+        <div class="hero-content">
+            <p class="hero-kicker mono" data-reveal>
+                <span class="kicker-line"></span> Étudiant BTS SIO — Spécialité SISR
+            </p>
+            <h1 class="hero-title" data-reveal>
+                Ibrahim <span class="hero-title-accent">NASRI</span>
+            </h1>
+            <p class="hero-subtitle" data-reveal>
+                J'installe, je configure, je sécurise et j'administre
+                les <span class="hl">systèmes</span> et les <span class="hl">réseaux</span> qui font tourner le monde numérique.
+            </p>
+            <div class="hero-actions" data-reveal>
+                <a href="#projets" class="btn btn-primary" data-nav>
+                    <span>Voir mes projets</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost" data-nav>Me contacter</a>
             </div>
         </div>
+
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <span class="mono">défiler</span>
+            <span class="scroll-line"></span>
+        </div>
+
+        <!-- Floating data chips -->
+        <div class="data-chip chip-1 mono" aria-hidden="true">192.168.1.1</div>
+        <div class="data-chip chip-2 mono" aria-hidden="true">TCP/IP</div>
+        <div class="data-chip chip-3 mono" aria-hidden="true">OSPF</div>
+        <div class="data-chip chip-4 mono" aria-hidden="true">DHCP</div>
     </section>
 
     <!-- ==================== COMPÉTENCES ==================== -->
-    <section id="competences" class="page">
+    <section id="competences" class="section">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-tag">Savoir-faire</span>
+            <div class="section-head" data-reveal>
+                <span class="section-tag mono">// savoir-faire</span>
                 <h2 class="section-title">Compétences</h2>
-                <p class="section-desc">Mes compétences techniques acquises au fil de ma formation et de mes expériences.</p>
+                <p class="section-desc">Mes compétences techniques acquises au fil de ma formation, de mes travaux pratiques et de mon stage.</p>
             </div>
             <div class="skills-grid">
-                <div class="skill-card glass-card scroll-reveal">
+                <div class="skill-card" data-reveal>
                     <div class="skill-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                     </div>
                     <h3 class="skill-title">Systèmes</h3>
-                    <p class="skill-desc">Installation, configuration et administration de serveurs Linux (Debian, Ubuntu) et Windows Server.</p>
+                    <p class="skill-desc">Installation, configuration et administration de serveurs Linux et Windows.</p>
                     <div class="skill-tags">
-                        <span class="tag">Debian</span>
-                        <span class="tag">Ubuntu</span>
-                        <span class="tag">Windows Server</span>
-                        <span class="tag">Active Directory</span>
+                        <span class="tag">Debian</span><span class="tag">Ubuntu</span>
+                        <span class="tag">Windows Server</span><span class="tag">Active Directory</span>
                     </div>
                 </div>
-                <div class="skill-card glass-card scroll-reveal scroll-reveal--delay">
+                <div class="skill-card" data-reveal>
                     <div class="skill-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
                     </div>
                     <h3 class="skill-title">Réseaux</h3>
-                    <p class="skill-desc">Conception, configuration et dépannage de réseaux. Protocoles TCP/IP, routage, switching.</p>
+                    <p class="skill-desc">Conception, configuration et dépannage de réseaux. Protocoles et équipements.</p>
                     <div class="skill-tags">
-                        <span class="tag">TCP/IP</span>
-                        <span class="tag">VLAN</span>
-                        <span class="tag">Cisco</span>
-                        <span class="tag">Firewall</span>
+                        <span class="tag">TCP/IP</span><span class="tag">VLAN</span>
+                        <span class="tag">Cisco</span><span class="tag">Firewall</span>
                     </div>
                 </div>
-                <div class="skill-card glass-card scroll-reveal scroll-reveal--delay-2">
+                <div class="skill-card" data-reveal>
                     <div class="skill-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                    </div>
-                    <h3 class="skill-title">Scripting</h3>
-                    <p class="skill-desc">Automatisation de tâches et scripts d'administration. Programmation shell et bases de Python.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Bash</span>
-                        <span class="tag">PowerShell</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL</span>
-                    </div>
-                </div>
-                <div class="skill-card glass-card scroll-reveal">
-                    <div class="skill-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <h3 class="skill-title">Virtualisation</h3>
-                    <p class="skill-desc">Déploiement et gestion de machines virtuelles. Environnements virtualisés et conteneurisés.</p>
+                    <p class="skill-desc">Déploiement et gestion de machines virtuelles et d'environnements conteneurisés.</p>
                     <div class="skill-tags">
-                        <span class="tag">Proxmox</span>
-                        <span class="tag">VMware</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">VirtualBox</span>
+                        <span class="tag">Proxmox</span><span class="tag">VMware</span>
+                        <span class="tag">Docker</span><span class="tag">VirtualBox</span>
                     </div>
                 </div>
-                <div class="skill-card glass-card scroll-reveal scroll-reveal--delay">
+                <div class="skill-card" data-reveal>
                     <div class="skill-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l-6-6 6-6"/><path d="M9 6l-6 6 6 6"/></svg>
+                    </div>
+                    <h3 class="skill-title">Scripting</h3>
+                    <p class="skill-desc">Automatisation de l'administration système et réseau via des scripts.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Bash</span><span class="tag">PowerShell</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-reveal>
+                    <div class="skill-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
                     </div>
                     <h3 class="skill-title">Monitoring</h3>
-                    <p class="skill-desc">Mise en place de solutions de supervision et d'alertes pour garantir la disponibilité des services.</p>
+                    <p class="skill-desc">Supervision et alertes pour garantir la disponibilité et la performance des services.</p>
                     <div class="skill-tags">
-                        <span class="tag">Zabbix</span>
-                        <span class="tag">Nagios</span>
-                        <span class="tag">Grafana</span>
-                        <span class="tag">SNMP</span>
+                        <span class="tag">Zabbix</span><span class="tag">Grafana</span><span class="tag">SNMP</span>
                     </div>
                 </div>
-                <div class="skill-card glass-card scroll-reveal scroll-reveal--delay-2">
+                <div class="skill-card" data-reveal>
                     <div class="skill-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                     </div>
                     <h3 class="skill-title">Sécurité</h3>
-                    <p class="skill-desc">Politiques de sécurité, pare-feu, sauvegardes et plans de reprise d'activité.</p>
+                    <p class="skill-desc">Politiques de sécurité, pare-feu, sauvegardes et plan de reprise d'activité.</p>
                     <div class="skill-tags">
-                        <span class="tag">iptables</span>
-                        <span class="tag">SSL/TLS</span>
-                        <span class="tag">Bacula</span>
-                        <span class="tag">VPN</span>
+                        <span class="tag">iptables</span><span class="tag">SSL/TLS</span><span class="tag">VPN</span>
                     </div>
                 </div>
             </div>
@@ -180,95 +156,78 @@
     </section>
 
     <!-- ==================== PROJETS ==================== -->
-    <section id="projets" class="page">
+    <section id="projets" class="section section--dark">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-tag">Réalisations</span>
+            <div class="section-head" data-reveal>
+                <span class="section-tag mono">// réalisations</span>
                 <h2 class="section-title">Projets</h2>
-                <p class="section-desc">Découvrez les projets réalisés durant ma formation.</p>
+                <p class="section-desc">Des travaux concrets menés durant ma formation de BTS SIO SISR.</p>
             </div>
             <div class="projects-grid">
-                <article class="project-card glass-card scroll-reveal">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        </div>
+                <article class="project-card" data-reveal>
+                    <div class="project-top">
                         <span class="project-badge">Stage</span>
+                        <span class="project-num mono">01</span>
                     </div>
                     <h3 class="project-title">Rapport de Stage</h3>
                     <p class="project-desc">Stage en entreprise dans le domaine des systèmes d'information et réseaux. Mise en pratique des compétences acquises en formation.</p>
-                    <div class="project-tags">
-                        <span class="tag">Infrastructure</span>
-                        <span class="tag">Réseau</span>
-                        <span class="tag">Administration</span>
+                    <div class="skill-tags">
+                        <span class="tag">Infrastructure</span><span class="tag">Réseau</span><span class="tag">Administration</span>
                     </div>
                     <a href="Rapport de Stage def.pdf" target="_blank" class="project-link">
                         <span>Voir le rapport</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     </a>
                 </article>
-                <article class="project-card glass-card scroll-reveal scroll-reveal--delay">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                        </div>
+                <article class="project-card" data-reveal>
+                    <div class="project-top">
                         <span class="project-badge">Projet</span>
+                        <span class="project-num mono">02</span>
                     </div>
                     <h3 class="project-title">Simulation Réseau Cisco</h3>
-                    <p class="project-desc">Conception et simulation d'un réseau d'entreprise avec Cisco Packet Tracer. Topologie, addressing et routage.</p>
-                    <div class="project-tags">
-                        <span class="tag">Cisco</span>
-                        <span class="tag">Packet Tracer</span>
-                        <span class="tag">Routage</span>
+                    <p class="project-desc">Conception et simulation d'un réseau d'entreprise avec Cisco Packet Tracer. Topologie, adressage et routage.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Cisco</span><span class="tag">Packet Tracer</span><span class="tag">Routage</span>
                     </div>
                     <div class="project-links">
                         <button class="project-link" data-preview="Simulation Reseau Cisco.pdf">
                             <span>Prévisualiser</span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                         </button>
                         <a href="Simulation_Reseau_Cisco.pkt" download class="project-link">
                             <span>Télécharger .pkt</span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         </a>
                     </div>
                 </article>
-                <article class="project-card glass-card scroll-reveal scroll-reveal--delay-2">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-                        </div>
+                <article class="project-card" data-reveal>
+                    <div class="project-top">
                         <span class="project-badge">Projet</span>
+                        <span class="project-num mono">03</span>
                     </div>
                     <h3 class="project-title">Serveur Debian LAMP</h3>
                     <p class="project-desc">Déploiement complet d'un serveur LAMP (Linux, Apache, MySQL, PHP) sur Debian. Configuration et sécurisation.</p>
-                    <div class="project-tags">
-                        <span class="tag">Debian</span>
-                        <span class="tag">Apache</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">PHP</span>
+                    <div class="skill-tags">
+                        <span class="tag">Debian</span><span class="tag">Apache</span><span class="tag">MySQL</span><span class="tag">PHP</span>
                     </div>
                     <a href="Rapport_Serveur_Debian_LAMP.pdf" target="_blank" class="project-link">
                         <span>Voir le rapport</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     </a>
                 </article>
-                <article class="project-card glass-card scroll-reveal">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                        </div>
+                <article class="project-card" data-reveal>
+                    <div class="project-top">
                         <span class="project-badge">Projet</span>
+                        <span class="project-num mono">04</span>
                     </div>
                     <h3 class="project-title">Rapport Proxmox</h3>
-                    <p class="project-desc">Virtualisation d'infrastructure avec Proxmox VE. Création de VMs, gestion du stockage et sauvegardes.</p>
-                    <div class="project-tags">
-                        <span class="tag">Proxmox</span>
-                        <span class="tag">Virtualisation</span>
-                        <span class="tag">VMs</span>
+                    <p class="project-desc">Virtualisation d'infrastructure avec Proxmox VE. Création de machines virtuelles, gestion du stockage et sauvegardes.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Proxmox</span><span class="tag">Virtualisation</span><span class="tag">VMs</span>
                     </div>
                     <a href="Rapport proxmox.pdf" target="_blank" class="project-link">
                         <span>Voir le rapport</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     </a>
                 </article>
             </div>
@@ -276,71 +235,72 @@
     </section>
 
     <!-- ==================== CONTACT ==================== -->
-    <section id="contact" class="page">
+    <section id="contact" class="section">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-tag">Message</span>
-                <h2 class="section-title">Contact</h2>
-                <p class="section-desc">Une question, un projet, une opportunité ? N'hésitez pas à me contacter.</p>
+            <div class="section-head" data-reveal>
+                <span class="section-tag mono">// contact</span>
+                <h2 class="section-title">Travaillons ensemble</h2>
+                <p class="section-desc">Une question, un projet, une opportunité de stage ou d'alternance ? Écrivez-moi.</p>
             </div>
             <div class="contact-layout">
-                <form class="contact-form glass-card scroll-reveal" action="https://formspree.io/f/mjybnyza" method="POST">
+                <form class="contact-form" id="contactForm" data-reveal>
                     <div class="form-group">
-                        <label class="form-label" for="name">Nom</label>
+                        <label class="form-label mono" for="name">Nom</label>
                         <input class="form-input" type="text" id="name" name="name" placeholder="Votre nom" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="email">Email</label>
+                        <label class="form-label mono" for="email">Email</label>
                         <input class="form-input" type="email" id="email" name="email" placeholder="votre@email.com" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="subject">Sujet</label>
+                        <label class="form-label mono" for="subject">Sujet</label>
                         <input class="form-input" type="text" id="subject" name="subject" placeholder="Sujet du message" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="message">Message</label>
+                        <label class="form-label mono" for="message">Message</label>
                         <textarea class="form-input form-textarea" id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
                     </div>
-                    <button class="btn btn-glass btn-glass-primary btn-submit" type="submit">
-                        <span>Envoyer</span>
+                    <button class="btn btn-primary btn-submit" type="submit">
+                        <span>Envoyer le message</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                     </button>
+                    <div class="form-feedback" id="formFeedback" role="status"></div>
                 </form>
-                <div class="contact-info scroll-reveal scroll-reveal--delay">
-                    <div class="info-card glass-card">
+                <div class="contact-info" data-reveal>
+                    <div class="info-card">
                         <div class="info-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                         </div>
                         <div>
-                            <h4 class="info-title">Email</h4>
-                            <p class="info-text">ibnasri.sio@gmail.com</p>
+                            <h4 class="info-title mono">Email</h4>
+                            <a href="mailto:ibnasri.sio@gmail.com" class="info-value">ibnasri.sio@gmail.com</a>
                         </div>
                     </div>
-                    <div class="info-card glass-card">
+                    <div class="info-card">
                         <div class="info-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                         </div>
                         <div>
-                            <h4 class="info-title">Téléphone</h4>
-                            <p class="info-text">+262 693 84 65 11</p>
+                            <h4 class="info-title mono">Téléphone</h4>
+                            <a href="tel:+262693846511" class="info-value">+262 693 84 65 11</a>
                         </div>
                     </div>
-                    <div class="info-card glass-card">
+                    <div class="info-card">
                         <div class="info-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                         </div>
                         <div>
-                            <h4 class="info-title">LinkedIn</h4>
-                            <p class="info-text"><a href="https://www.linkedin.com/in/ibrahim-nasri-/" target="_blank" style="color:var(--accent);text-decoration:none;">linkedin.com/in/ibrahim-nasri-</a></p>
+                            <h4 class="info-title mono">LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/ibrahim-nasri-/" target="_blank" class="info-value">linkedin.com/in/ibrahim-nasri-</a>
                         </div>
                     </div>
-                    <div class="info-card glass-card">
+                    <div class="info-card">
                         <div class="info-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                         </div>
                         <div>
-                            <h4 class="info-title">GitHub</h4>
-                            <p class="info-text"><a href="https://github.com/nasriibrahim2007" target="_blank" style="color:var(--accent);text-decoration:none;">github.com/nasriibrahim2007</a></p>
+                            <h4 class="info-title mono">GitHub</h4>
+                            <a href="https://github.com/nasriibrahim2007" target="_blank" class="info-value">github.com/nasriibrahim2007</a>
                         </div>
                     </div>
                 </div>
@@ -348,34 +308,38 @@
         </div>
     </section>
 
-    <!-- PDF PREVIEW MODAL -->
+    <!-- ==================== PDF PREVIEW MODAL ==================== -->
     <div class="modal-overlay" id="pdfModal">
-        <div class="modal-content glass-card">
+        <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle">Aperçu du document</h3>
+                <h3 class="modal-title mono" id="modalTitle">Aperçu du document</h3>
                 <button class="modal-close" id="modalClose" aria-label="Fermer">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
             <div class="modal-body">
-                <iframe id="pdfFrame" src="" frameborder="0"></iframe>
+                <iframe id="pdfFrame" src="" frameborder="0" title="Aperçu PDF"></iframe>
             </div>
             <div class="modal-footer">
-                <a id="modalDownload" href="" download class="btn btn-glass btn-glass-primary">
+                <a id="modalDownload" href="" download class="btn btn-primary">
                     <span>Télécharger</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
-        <div class="container">
+        <div class="container footer-inner">
             <p class="footer-text">&copy; 2026 Ibrahim NASRI. Tous droits réservés.</p>
+            <p class="footer-made mono">Conçu en 3D avec Three.js</p>
         </div>
     </footer>
 
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="three-scene.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
