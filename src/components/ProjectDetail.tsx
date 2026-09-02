@@ -36,7 +36,7 @@ export function ProjectDetail() {
           transition={{ duration: 0.5 }}
         >
           <Link
-            to="/"
+            to="/#projets"
             className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft size={16} />

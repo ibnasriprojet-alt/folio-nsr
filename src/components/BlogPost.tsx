@@ -35,7 +35,7 @@ export function BlogPost() {
           transition={{ duration: 0.5 }}
         >
           <Link
-            to="/"
+            to="/#blog"
             className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft size={16} />
@@ -89,11 +89,11 @@ export function BlogPost() {
 
           <div className="mt-12 border-t border-border pt-8">
             <Link
-              to="/"
+              to="/#blog"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <ArrowLeft size={16} />
-              Retour au portfolio
+              Retour au blog
             </Link>
           </div>
         </motion.article>
