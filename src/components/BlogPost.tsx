@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowLeft, Calendar, Tag } from 'lucide-react'
+import { ArrowLeft, Calendar, ExternalLink, Tag } from 'lucide-react'
 import { useParams, Link } from 'react-router-dom'
 
 import { Footer } from '@/components/Footer'
@@ -71,6 +71,21 @@ export function BlogPost() {
               </motion.p>
             ))}
           </div>
+
+          {post.source && (
+            <div className="mt-8 rounded-xl border border-border bg-card p-6">
+              <p className="mb-2 text-sm font-semibold">Article original</p>
+              <a
+                href={post.source}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-accent hover:underline"
+              >
+                <ExternalLink size={14} />
+                {post.sourceName} — Lire l'article complet
+              </a>
+            </div>
+          )}
 
           <div className="mt-12 border-t border-border pt-8">
             <Link

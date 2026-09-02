@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Briefcase, Calendar, CheckCircle2, FileText } from 'lucide-react'
+import { Briefcase, Calendar, CheckCircle2, FileText, MapPin, Users } from 'lucide-react'
 
 import { Reveal, Stagger, staggerItem } from '@/components/Reveal'
 import { Badge } from '@/components/ui/badge'
@@ -21,18 +21,36 @@ export function StageSection() {
           <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
             <div>
               <h3 className="text-xl font-semibold">{stage.title}</h3>
-              <p className="mt-1 text-muted-foreground">{stage.company}</p>
+              <p className="mt-1 text-lg font-medium text-accent">
+                {stage.company}
+              </p>
+              <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
+                <MapPin size={14} />
+                {stage.address}
+              </p>
             </div>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-col items-end gap-2 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
                 <Calendar size={14} />
-                {stage.duration}
+                {stage.period}
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Briefcase size={14} />
-                {stage.year}
+                {stage.duration}
               </span>
             </div>
+          </div>
+
+          <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
+            {stage.description}
+          </p>
+
+          <div className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
+            <Users size={14} />
+            <span>
+              Maître de stage : {stage.master} · Tuteurs :{' '}
+              {stage.tutors.join(', ')}
+            </span>
           </div>
 
           <Stagger className="space-y-4">

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { BookOpen, Calendar, ChevronRight } from 'lucide-react'
+import { BookOpen, Calendar, ChevronRight, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { Reveal, Stagger, staggerItem } from '@/components/Reveal'
@@ -12,10 +12,11 @@ export function Blog() {
       <Reveal>
         <p className="mb-2 font-mono text-sm text-accent">05 //</p>
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Blog
+          Blog & Lectures
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Articles techniques et retours d'expérience sur mes projets.
+          Retours d'expérience et articles techniques qui m'inspirent, liés à
+          mes projets BTS SIO SISR.
         </p>
       </Reveal>
 
@@ -39,21 +40,48 @@ export function Blog() {
             </div>
 
             <h3 className="mb-2 font-semibold leading-snug">{post.title}</h3>
-            <p className="mb-5 flex-1 text-sm text-muted-foreground">
+            <p className="mb-2 flex-1 text-sm text-muted-foreground">
               {post.excerpt}
             </p>
 
-            <Link
-              to={`/blog/${post.slug}`}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-accent"
-            >
-              <BookOpen size={14} />
-              Lire l'article
-              <ChevronRight
-                size={14}
-                className="transition-transform group-hover:translate-x-0.5"
-              />
-            </Link>
+            {post.source && (
+              <p className="mb-4 text-xs text-muted-foreground">
+                Source:{' '}
+                <a
+                  href={post.source}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 text-accent hover:underline"
+                >
+                  {post.sourceName} <ExternalLink size={10} />
+                </a>
+              </p>
+            )}
+
+            <div className="flex flex-wrap gap-3 border-t border-border pt-4">
+              <Link
+                to={`/blog/${post.slug}`}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-accent"
+              >
+                <BookOpen size={14} />
+                Mon analyse
+                <ChevronRight
+                  size={14}
+                  className="transition-transform group-hover:translate-x-0.5"
+                />
+              </Link>
+              {post.source && (
+                <a
+                  href={post.source}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-accent"
+                >
+                  <ExternalLink size={14} />
+                  Article original
+                </a>
+              )}
+            </div>
           </motion.article>
         ))}
       </Stagger>
