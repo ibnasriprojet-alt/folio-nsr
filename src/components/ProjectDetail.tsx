@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowLeft, ExternalLink, FileText, FolderGit2, Github, Linkedin } from 'lucide-react'
 import { useParams, Link } from 'react-router-dom'
+import { HashLink } from '@/components/HashLink'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -35,13 +36,13 @@ export function ProjectDetail() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Link
+          <HashLink
             to="/#projets"
             className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft size={16} />
             Retour aux projets
-          </Link>
+          </HashLink>
 
           <div className="mb-6 flex items-center gap-3">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-muted text-accent">

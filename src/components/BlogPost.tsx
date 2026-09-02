@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowLeft, Calendar, ExternalLink, Tag } from 'lucide-react'
 import { useParams, Link } from 'react-router-dom'
+import { HashLink } from '@/components/HashLink'
 
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
@@ -34,13 +35,13 @@ export function BlogPost() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Link
+          <HashLink
             to="/#blog"
             className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft size={16} />
             Retour au blog
-          </Link>
+          </HashLink>
 
           <div className="mb-6 flex flex-wrap items-center gap-3">
             <Badge variant="outline">{post.category}</Badge>
@@ -88,13 +89,13 @@ export function BlogPost() {
           )}
 
           <div className="mt-12 border-t border-border pt-8">
-            <Link
+            <HashLink
               to="/#blog"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <ArrowLeft size={16} />
               Retour au blog
-            </Link>
+            </HashLink>
           </div>
         </motion.article>
       </main>
