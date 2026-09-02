@@ -1,15 +1,17 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, Moon, Sun, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { navLinks } from '@/lib/data'
 import { cn } from '@/lib/utils'
+import { useTheme } from '@/components/ThemeProvider'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState('#accueil')
   const reduce = useReducedMotion()
+  const { theme, toggle } = useTheme()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16)
@@ -69,6 +71,13 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
+          <button
+            onClick={toggle}
+            className="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Changer de thème"
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
         </div>
 
         <button
@@ -98,6 +107,13 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={toggle}
+              className="mt-2 inline-flex h-10 w-10 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground"
+              aria-label="Changer de thème"
+            >
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
           </div>
         </motion.div>
       )}

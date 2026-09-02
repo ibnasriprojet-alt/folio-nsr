@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import { ArrowDown, Github, Linkedin } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -15,17 +15,37 @@ const commands = [
 
 export function Hero() {
   const reduce = useReducedMotion()
+  const { scrollY } = useScroll()
+
+  const bgY = useTransform(scrollY, [0, 600], [0, 150])
+  const terminalY = useTransform(scrollY, [0, 600], [0, 60])
+  const opacity = useTransform(scrollY, [0, 400], [1, 0])
 
   return (
     <section
       id="accueil"
       className="relative flex min-h-screen items-center overflow-hidden"
     >
-      {/* background grid */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-grid" />
+      {/* Parallax background grid */}
+      <motion.div
+        style={{ y: bgY }}
+        className="pointer-events-none absolute inset-0 -z-10 bg-grid"
+      />
+
+      {/* Floating orbs */}
+      <motion.div
+        animate={reduce ? {} : { y: [0, -20, 0], x: [0, 10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        className="pointer-events-none absolute -right-32 top-1/4 h-64 w-64 rounded-full bg-accent/5 blur-3xl"
+      />
+      <motion.div
+        animate={reduce ? {} : { y: [0, 15, 0], x: [0, -8, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        className="pointer-events-none absolute -left-20 top-2/3 h-48 w-48 rounded-full bg-accent/5 blur-3xl"
+      />
 
       <div className="mx-auto grid w-full max-w-5xl gap-12 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div>
+        <motion.div style={{ opacity }}>
           <motion.p
             initial={{ opacity: 0, y: reduce ? 0 : 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,14 +122,15 @@ export function Hero() {
               {profile.email}
             </a>
           </motion.div>
-        </div>
+        </motion.div>
 
-        {/* Terminal */}
+        {/* Terminal with parallax */}
         <motion.div
+          style={{ y: terminalY }}
           initial={{ opacity: 0, y: reduce ? 0 : 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-xl border border-border bg-[#0b0b0e] shadow-2xl"
+          className="rounded-xl border border-border bg-card shadow-2xl"
         >
           <div className="flex items-center gap-2 border-b border-border px-4 py-3">
             <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />

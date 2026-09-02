@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/RJ45favicon.png" />
@@ -16,6 +16,16 @@
       name="description"
       content="Portfolio d'Ibrahim NASRI, étudiant BTS SIO SISR. Administration système, réseaux, virtualisation et automatisation."
     />
+    <meta property="og:title" content="Ibrahim NASRI — Portfolio" />
+    <meta property="og:description" content="Étudiant BTS SIO SISR. Administration système, réseaux, virtualisation et automatisation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/RJ45favicon.png" />
+    <script>
+      (function() {
+        var t = localStorage.getItem('theme') || 'dark';
+        document.documentElement.classList.add(t);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

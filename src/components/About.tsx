@@ -4,13 +4,32 @@ import { GraduationCap, MapPin } from 'lucide-react'
 import { Reveal, Stagger, staggerItem } from '@/components/Reveal'
 import { Badge } from '@/components/ui/badge'
 import { profile } from '@/lib/data'
+import { useAnimatedCounter } from '@/hooks/useAnimatedCounter'
 
 const stats = [
-  { n: '4+', l: 'Projets réalisés' },
-  { n: '6', l: 'Domaines techniques' },
-  { n: '2', l: 'Années de BTS' },
-  { n: '∞', l: 'Curiosité' },
+  { n: 4, suffix: '+', label: 'Projets réalisés' },
+  { n: 6, suffix: '', label: 'Domaines techniques' },
+  { n: 2, suffix: '', label: 'Années de BTS' },
+  { n: 100, suffix: '%', label: 'Motivation' },
 ]
+
+function StatCard({ n, suffix, label }: { n: number; suffix: string; label: string }) {
+  const { count, ref } = useAnimatedCounter(n)
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={staggerItem}
+      className="rounded-xl border border-border bg-card p-6 text-center"
+    >
+      <p className="text-3xl font-bold text-accent">
+        {count}
+        {suffix}
+      </p>
+      <p className="mt-1 text-sm text-muted-foreground">{label}</p>
+    </motion.div>
+  )
+}
 
 export function About() {
   return (
@@ -53,14 +72,7 @@ export function About() {
 
       <Stagger className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
         {stats.map((s) => (
-          <motion.div
-            key={s.l}
-            variants={staggerItem}
-            className="rounded-xl border border-border bg-card p-6 text-center"
-          >
-            <p className="text-3xl font-bold text-accent">{s.n}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{s.l}</p>
-          </motion.div>
+          <StatCard key={s.label} n={s.n} suffix={s.suffix} label={s.label} />
         ))}
       </Stagger>
     </section>
