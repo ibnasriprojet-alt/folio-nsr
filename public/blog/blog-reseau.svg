@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <rect width="400" height="200" fill="#1a1a1e"/>
+  <circle cx="80" cy="70" r="14" fill="#27272a" stroke="#e11d48" stroke-width="2"/>
+  <circle cx="200" cy="70" r="14" fill="#27272a" stroke="#3f3f46" stroke-width="2"/>
+  <circle cx="320" cy="70" r="14" fill="#27272a" stroke="#3f3f46" stroke-width="2"/>
+  <line x1="94" y1="70" x2="186" y2="70" stroke="#e11d48" stroke-width="2"/>
+  <line x1="214" y1="70" x2="306" y2="70" stroke="#e11d48" stroke-width="2"/>
+  <text x="80" y="120" text-anchor="middle" fill="#e11d48" font-family="monospace" font-size="10">A</text>
+  <text x="200" y="120" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="10">B</text>
+  <text x="320" y="120" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="10">C</text>
+  <text x="200" y="160" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="12">RESEAU MULTI-SITES</text>
+</svg>

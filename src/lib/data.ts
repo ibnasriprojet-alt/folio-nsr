@@ -195,6 +195,7 @@ export const blogPosts = [
     title: 'Sécuriser un serveur Debian en production',
     date: '2026-06-15',
     category: 'Sécurité',
+    image: '/blog/blog-securite.svg',
     excerpt:
       'Basé sur les pratiques rencontrées en stage chez AMB Sarl : SSH, pare-feu iptables, mises à jour, gestion des identités.',
     source: 'https://www.shpv.fr/blog/ipv6-deploiement-2026/',
@@ -210,6 +211,7 @@ export const blogPosts = [
     title: 'Proxmox VE en virtualisation imbriquée : mon lab d\'apprentissage',
     date: '2026-05-20',
     category: 'Virtualisation',
+    image: '/blog/blog-virtualisation.svg',
     excerpt:
       'Comment j\'ai mis en place Proxmox VE dans VirtualBox pour découvrir l\'hyperviseur sans serveur dédié.',
     source: 'https://f84.allfab.fr/posts/2026/20260529-perfect-homelab-serie-10/',
@@ -225,6 +227,7 @@ export const blogPosts = [
     title: 'Apprendre le routage OSPF avec Cisco Packet Tracer',
     date: '2026-04-10',
     category: 'Réseaux',
+    image: '/blog/blog-reseau.svg',
     excerpt:
       'Mon retour d\'expérience sur la simulation d\'un réseau multi-sites avec routage dynamique OSPF.',
     source: 'https://www.mikelossmann.me/blog/',
@@ -233,6 +236,54 @@ export const blogPosts = [
       'Cisco Packet Tracer est l\'outil idéal pour apprendre les réseaux sans matériel physique. Dans mon projet, j\'ai simulé un réseau multi-sites reliant 3 sites avec routage OSPF.',
       'Les concepts essentiels : topologie en chaîne (Site A ← Site B central → Site C), adressage /24 par site, et configuration OSPF pour le routage dynamique inter-sites.',
       'Le blog de Mike Lossmann propose des articles détaillés sur OSPF (LSAs, algorithmes SPF, areas) qui complètent parfaitement la pratique sur Packet Tracer.',
+    ],
+  },
+  {
+    slug: 'vm-debian-lamp',
+    title: 'Déployer une pile LAMP sur une VM Debian',
+    date: '2026-03-28',
+    category: 'Systèmes',
+    image: '/blog/blog-web.svg',
+    excerpt:
+      'Apache, MySQL et PHP sur Debian 13 : montage d\'un environnement local complet et les pièges à éviter.',
+    source: 'https://www.shpv.fr/blog/keepalived-vrrp/',
+    sourceName: 'SHPV',
+    content: [
+      'Le déploiement d\'une pile LAMP (Linux, Apache, MySQL, PHP) est un classique de l\'administration système que j\'ai réalisé sur une VM Debian 13 hébergée sous Proxmox.',
+      'Les étapes : installation d\'Apache avec virtual hosts, configuration de MySQL, installation de PHP avec les modules nécessaires, puis sécurisation (pare-feu iptables, SSL).',
+      'Attention aux pièges courants : permissions des fichiers, timezone PHP, et activation des modules Apache (rewrite, ssl).',
+    ],
+  },
+  {
+    slug: 'automation-bash',
+    title: 'Automatiser ses sauvegardes avec des scripts Bash',
+    date: '2026-02-14',
+    category: 'Automatisation',
+    image: '/blog/blog-automation.svg',
+    excerpt:
+      'Scripts de sauvegarde, logrotate et planification cron : rendre les tâches répétitives fiables et traçables.',
+    source: 'https://blog.stephane-robert.info/docs/securiser/acces/netbird/',
+    sourceName: 'Stéphane Robert',
+    content: [
+      'En administration système, l\'automatisation des sauvegardes est essentielle. J\'ai appris à écrire des scripts Bash robustes (avec gestion d\'erreurs et logs) et à les planifier via cron.',
+      'Les bonnes pratiques : vérifier le code de retour de chaque commande, journaliser les exécutions, et prévoir une notification en cas d\'échec.',
+      'Des ressources comme le blog de Stéphane Robert montrent comment aller plus loin avec de vrais outils d\'automatisation de l\'infrastructure.',
+    ],
+  },
+  {
+    slug: 'vpn-wireguard',
+    title: 'Comprendre les VPN mesh et WireGuard',
+    date: '2026-01-08',
+    category: 'Sécurité',
+    image: '/blog/blog-securite.svg',
+    excerpt:
+      'VPN, tunnel chiffré et accès distant sécurisé : les concepts derrière WireGuard et les VPN mesh.',
+    source: 'https://blog.stephane-robert.info/docs/securiser/acces/netbird/',
+    sourceName: 'Stéphane Robert',
+    content: [
+      'Les VPN sont un pilier de l\'infrastructure moderne. WireGuard se distingue par sa simplicité et ses performances par rapport aux solutions historiques (IPsec, OpenVPN).',
+      'Le concept de VPN mesh va plus loin : chaque machine peut joindre directement les autres en pair-à-pair chiffré, sans passer par un concentrateur central.',
+      'En stage, j\'ai découvert l\'importance des accès distants sécurisés pour intervenir sur les postes clients à distance (télémaintenance).',
     ],
   },
 ]
