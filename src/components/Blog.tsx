@@ -95,8 +95,8 @@ export function Blog() {
 
       {/* Carrousel défilant droite → gauche */}
       <div className="relative mt-12">
-        <div className="blog-marquee overflow-hidden">
-          <div className="blog-marquee-track flex gap-6 px-6 py-2">
+        <div className="marquee-scroll overflow-hidden">
+          <div className="marquee-scroll-track flex gap-6 px-6 py-2">
             {doubled.map((post, i) => (
               <BlogCard key={`${post.slug}-${i}`} post={post} />
             ))}

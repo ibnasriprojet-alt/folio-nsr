@@ -107,27 +107,27 @@ html {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
-/* Marquee blog : défilement droite → gauche */
-.blog-marquee {
+/* Marquee : défilement droite → gauche */
+.marquee-scroll {
   mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
 }
 
-.blog-marquee-track {
-  animation: blog-scroll 24s linear infinite;
+.marquee-scroll-track {
+  animation: marquee-scroll 24s linear infinite;
   will-change: transform;
 }
 
-.blog-marquee:hover .blog-marquee-track {
+.marquee-scroll:hover .marquee-scroll-track {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .blog-marquee-track {
+  .marquee-scroll-track {
     animation: none;
   }
 }
 
-@keyframes blog-scroll {
+@keyframes marquee-scroll {
   from {
     transform: translateX(0);
   }
