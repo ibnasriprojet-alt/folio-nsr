@@ -195,7 +195,7 @@ export const blogPosts = [
     title: 'Sécuriser un serveur Debian en production',
     date: '2026-06-15',
     category: 'Sécurité',
-    image: '/blog/blog-securite.svg',
+    image: '/blog/blog-securite.jpg',
     excerpt:
       'Basé sur les pratiques rencontrées en stage chez AMB Sarl : SSH, pare-feu iptables, mises à jour, gestion des identités.',
     source: 'https://www.shpv.fr/blog/ipv6-deploiement-2026/',
@@ -211,7 +211,7 @@ export const blogPosts = [
     title: 'Proxmox VE en virtualisation imbriquée : mon lab d\'apprentissage',
     date: '2026-05-20',
     category: 'Virtualisation',
-    image: '/blog/blog-virtualisation.svg',
+    image: '/blog/blog-proxmox.jpg',
     excerpt:
       'Comment j\'ai mis en place Proxmox VE dans VirtualBox pour découvrir l\'hyperviseur sans serveur dédié.',
     source: 'https://f84.allfab.fr/posts/2026/20260529-perfect-homelab-serie-10/',
@@ -227,7 +227,7 @@ export const blogPosts = [
     title: 'Apprendre le routage OSPF avec Cisco Packet Tracer',
     date: '2026-04-10',
     category: 'Réseaux',
-    image: '/blog/blog-reseau.svg',
+    image: '/blog/blog-reseau.jpg',
     excerpt:
       'Mon retour d\'expérience sur la simulation d\'un réseau multi-sites avec routage dynamique OSPF.',
     source: 'https://www.mikelossmann.me/blog/',
@@ -243,7 +243,7 @@ export const blogPosts = [
     title: 'Déployer une pile LAMP sur une VM Debian',
     date: '2026-03-28',
     category: 'Systèmes',
-    image: '/blog/blog-web.svg',
+    image: '/blog/blog-web.jpg',
     excerpt:
       'Apache, MySQL et PHP sur Debian 13 : montage d\'un environnement local complet et les pièges à éviter.',
     source: 'https://www.shpv.fr/blog/keepalived-vrrp/',
@@ -259,7 +259,7 @@ export const blogPosts = [
     title: 'Automatiser ses sauvegardes avec des scripts Bash',
     date: '2026-02-14',
     category: 'Automatisation',
-    image: '/blog/blog-automation.svg',
+    image: '/blog/blog-automation.jpg',
     excerpt:
       'Scripts de sauvegarde, logrotate et planification cron : rendre les tâches répétitives fiables et traçables.',
     source: 'https://blog.stephane-robert.info/docs/securiser/acces/netbird/',
@@ -275,7 +275,7 @@ export const blogPosts = [
     title: 'Comprendre les VPN mesh et WireGuard',
     date: '2026-01-08',
     category: 'Sécurité',
-    image: '/blog/blog-securite.svg',
+    image: '/blog/blog-vpn.jpg',
     excerpt:
       'VPN, tunnel chiffré et accès distant sécurisé : les concepts derrière WireGuard et les VPN mesh.',
     source: 'https://blog.stephane-robert.info/docs/securiser/acces/netbird/',
