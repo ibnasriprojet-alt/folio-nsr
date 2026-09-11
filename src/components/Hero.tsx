@@ -26,10 +26,21 @@ export function Hero() {
       id="accueil"
       className="relative flex min-h-screen items-center overflow-hidden"
     >
+      {/* Background image flou */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <img
+          src="/image-AD-serveur.jpeg"
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full object-cover blur-sm"
+          style={{ opacity: 0.15 }}
+        />
+      </div>
+
       {/* Parallax background grid */}
       <motion.div
         style={{ y: bgY }}
-        className="pointer-events-none absolute inset-0 -z-10 bg-grid"
+        className="pointer-events-none absolute inset-0 bg-grid"
       />
 
       {/* Floating orbs */}
@@ -43,16 +54,6 @@ export function Hero() {
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         className="pointer-events-none absolute -left-20 top-2/3 h-48 w-48 rounded-full bg-accent/5 blur-3xl"
       />
-
-      {/* Background image flou */}
-      <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden">
-        <img
-          src="/image-AD-serveur.jpeg"
-          alt=""
-          aria-hidden="true"
-          className="h-full w-full object-cover opacity-[0.06] blur-md dark:opacity-[0.04]"
-        />
-      </div>
 
       <div className="mx-auto grid w-full max-w-5xl gap-12 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <motion.div style={{ opacity }}>
