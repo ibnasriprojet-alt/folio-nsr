@@ -94,7 +94,7 @@ export function Blog() {
         </p>
       </Reveal>
 
-      <Marquee speed={110}>{doubled.map((post, i) => (
+      <Marquee speed={70}>{doubled.map((post, i) => (
         <BlogCard key={`${post.slug}-${i}`} post={post} />
       ))}</Marquee>
 

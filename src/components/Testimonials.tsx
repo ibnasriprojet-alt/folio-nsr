@@ -57,7 +57,7 @@ export function Testimonials() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <Marquee speed={90}>
+        <Marquee speed={55}>
           {doubled.map((t, i) => (
             <figure
               key={`${t.author}-${i}`}
