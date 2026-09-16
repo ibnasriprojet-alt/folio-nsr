@@ -110,29 +110,10 @@ html {
 /* Marquee : défilement droite → gauche */
 .marquee-scroll {
   mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  scrollbar-width: none;
 }
 
-.marquee-scroll-track {
-  animation: marquee-scroll 24s linear infinite;
-  will-change: transform;
-}
-
-.marquee-scroll:hover .marquee-scroll-track {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-scroll-track {
-    animation: none;
-  }
-}
-
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.marquee-scroll::-webkit-scrollbar {
+  display: none;
 }
 

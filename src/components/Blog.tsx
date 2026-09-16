@@ -3,10 +3,11 @@ import {
   Calendar,
   ChevronRight,
   ExternalLink,
-  ArrowLeftRight,
+  MoveHorizontal,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+import { Marquee } from '@/components/Marquee'
 import { Reveal } from '@/components/Reveal'
 import { Badge } from '@/components/ui/badge'
 import { blogPosts } from '@/lib/data'
@@ -88,29 +89,19 @@ export function Blog() {
         <p className="mt-4 flex items-center gap-2 text-muted-foreground">
           Retours d'expérience et articles techniques qui m'inspirent.
           <span className="inline-flex items-center gap-1 rounded-md bg-muted px-2 py-1 text-xs">
-            <ArrowLeftRight size={12} /> Défilement automatique
+            <MoveHorizontal size={12} /> Auto + manuel
           </span>
         </p>
       </Reveal>
 
-      {/* Carrousel défilant droite → gauche */}
-      <div className="relative mt-12">
-        <div className="marquee-scroll overflow-hidden">
-          <div className="marquee-scroll-track flex gap-6 px-6 py-2">
-            {doubled.map((post, i) => (
-              <BlogCard key={`${post.slug}-${i}`} post={post} />
-            ))}
-          </div>
-        </div>
-
-        {/* Masques de fondu sur les bords */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent" />
-      </div>
+      <Marquee speed={110}>{doubled.map((post, i) => (
+        <BlogCard key={`${post.slug}-${i}`} post={post} />
+      ))}</Marquee>
 
       <Reveal delay={0.1} className="mt-8 text-center">
         <p className="text-sm text-muted-foreground">
-          {blogPosts.length} articles — survolez pour mettre en pause
+          {blogPosts.length} articles — survolez ou glissez, flèches
+          disponibles
         </p>
       </Reveal>
     </section>
