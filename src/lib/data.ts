@@ -81,27 +81,14 @@ export const skills = [
     description:
       'Déploiement et gestion de machines virtuelles et de conteneurs.',
     icon: 'box',
-    tags: ['Proxmox', 'VMware', 'Docker', 'VirtualBox'],
-  },
-  {
-    title: 'Scripting & Automatisation',
-    description: 'Automatisation des tâches d\'administration.',
-    icon: 'terminal',
-    tags: ['Bash', 'PowerShell', 'Python', 'SQL'],
-  },
-  {
-    title: 'Supervision',
-    description:
-      'Surveillance de la disponibilité et des performances des services.',
-    icon: 'activity',
-    tags: ['Zabbix', 'Grafana', 'SNMP', 'Nagios'],
+    tags: ['Proxmox', 'VMware', 'VirtualBox'],
   },
   {
     title: 'Sécurité',
     description:
       'Politiques de sécurité, pare-feu, sauvegardes et continuité d\'activité.',
     icon: 'shield',
-    tags: ['iptables', 'SSL/TLS', 'VPN', 'Bacula'],
+    tags: ['SSL/TLS', 'VPN'],
   },
 ]
 
