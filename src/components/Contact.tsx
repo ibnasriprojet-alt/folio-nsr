@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { CheckCircle2, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
 
 import { Reveal } from '@/components/Reveal'
-import { Testimonials } from '@/components/Testimonials'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -169,7 +168,6 @@ export function Contact() {
         </Reveal>
       </div>
 
-      <Testimonials />
-    </section>
+      </section>
   )
 }
