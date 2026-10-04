@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin } from 'lucide-react'
+import { ArrowDown, Download, Github, Linkedin } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { profile } from '@/lib/data'
@@ -99,6 +99,11 @@ export function Hero() {
             </Button>
             <Button asChild variant="outline" size="lg">
               <a href="#contact">Me contacter</a>
+            </Button>
+            <Button asChild variant="ghost" size="lg">
+              <a href="/CV_Nasri.pdf" download>
+                Mon CV <Download size={16} />
+              </a>
             </Button>
           </motion.div>
 
