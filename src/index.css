@@ -107,6 +107,77 @@ html {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
+/* Bouton CV accrocheur */
+.btn-cv {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg, var(--accent), #be123c);
+  color: var(--accent-foreground);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 0 0 2px var(--background),
+    0 0 0 4px var(--accent),
+    0 8px 24px rgba(225, 29, 72, 0.45);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn-cv:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 0 0 2px var(--background),
+    0 0 0 4px var(--accent),
+    0 12px 32px rgba(225, 29, 72, 0.6);
+}
+
+.btn-cv:active {
+  transform: translateY(0);
+}
+
+.btn-shine {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  left: -60%;
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: btn-shine 2.8s ease-in-out infinite;
+}
+
+@keyframes btn-shine {
+  0%,
+  55% {
+    left: -60%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-shine::after {
+    animation: none;
+    display: none;
+  }
+}
+
 /* Marquee : défilement droite → gauche */
 .marquee-scroll {
   mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);

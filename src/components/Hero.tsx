@@ -100,9 +100,15 @@ export function Hero() {
             <Button asChild variant="outline" size="lg">
               <a href="#contact">Me contacter</a>
             </Button>
-            <Button asChild variant="ghost" size="lg">
+            <Button
+              asChild
+              size="lg"
+              className="btn-cv rounded-full font-semibold"
+            >
               <a href="/CV_Nasri.pdf" download>
-                Mon CV <Download size={16} />
+                <span className="btn-shine" aria-hidden="true" />
+                <Download size={18} />
+                Mon CV
               </a>
             </Button>
           </motion.div>
