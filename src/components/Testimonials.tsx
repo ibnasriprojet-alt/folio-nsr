@@ -6,19 +6,19 @@ import { Reveal } from '@/components/Reveal'
 const testimonials = [
   {
     author: 'M. MZE E.',
-    role: 'Professeur — Réseaux',
+    role: 'Professeur · Réseaux',
     quote:
       'Élève sérieux et impliqué, Ibrahim a fait preuve d’une grande autonomie dans la mise en place de la simulation Cisco multi-sites.',
   },
   {
     author: 'M. ISSOUFI F.',
-    role: 'Professeur — Systèmes & Services',
+    role: 'Professeur · Systèmes & Services',
     quote:
       'Rigueur et méthode caractérisent son travail. Il a su mener son projet Proxmox jusqu’au bout, avec des comptes rendus bien construits.',
   },
   {
     author: 'M. PIERRES E.',
-    role: 'Professeur — Développement',
+    role: 'Professeur · Développement',
     quote:
       'Un élève curieux qui ne se contente pas de ce qu’on lui demande. Il va chercher plus loin et documente soigneusement ses essais.',
   },
@@ -30,7 +30,7 @@ const testimonials = [
   },
   {
     author: 'Mme NDOUKOU-NDOUKOU U.',
-    role: 'Professeure — Gestion & Communication',
+    role: 'Professeure · Gestion & Communication',
     quote:
       'Ibrahim communique avec aisance et présente des résultats clairs. Un réel investissement dans la vie du groupe et du lycée.',
   },

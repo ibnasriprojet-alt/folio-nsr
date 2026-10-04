@@ -83,7 +83,7 @@ export function BlogPost() {
                 className="inline-flex items-center gap-2 text-sm text-accent hover:underline"
               >
                 <ExternalLink size={14} />
-                {post.sourceName} — Lire l'article complet
+                {post.sourceName} · Lire l'article complet
               </a>
             </div>
           )}

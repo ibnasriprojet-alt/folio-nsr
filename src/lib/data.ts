@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Ibrahim NASRI',
-  role: 'Étudiant BTS SIO — SISR',
+  role: 'Étudiant BTS SIO SISR',
   headline:
     'Administration système · Réseaux · Virtualisation · Automatisation',
   bio: `Étudiant en deuxième année de BTS SIO option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) au Lycée Younoussa Bamana, Mamoudzou, Mayotte. Je conçois, déploie et sécurise des infrastructures informatiques : serveurs, réseaux, virtualisation et scripts d'automatisation. Rigoureux, curieux et orienté production, je cherche un stage / une alternance pour mettre mes compétences en pratique.`,
@@ -12,13 +12,13 @@ export const profile = {
 }
 
 export const stage = {
-  title: 'Stage — Support Informatique & Administration Réseaux',
+  title: 'Stage Support Informatique & Administration Réseaux',
   company: 'AMB Sarl',
   address: '5 Rue de la Grande-Traversée, Kawéni 97600, Mayotte',
   master: 'M. Moussa',
   tutors: ['M. Ismael (tuteur terrain)', 'M. Davide (technicien atelier)'],
   duration: '5 semaines',
-  period: '18 mai 2026 — 19 juin 2026',
+  period: '18 mai 2026 · 19 juin 2026',
   year: '2026',
   description:
     'Support informatique, maintenance matérielle et administration de réseaux d\'entreprise. AMB Sarl est spécialisée dans le conseil informatique, l\'entretien et le dépannage de parcs de machines, ainsi que la vente de mobilier de bureau professionnel.',

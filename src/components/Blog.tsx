@@ -100,7 +100,7 @@ export function Blog() {
 
       <Reveal delay={0.1} className="mt-8 text-center">
         <p className="text-sm text-muted-foreground">
-          {blogPosts.length} articles — survolez ou glissez, flèches
+          {blogPosts.length} articles · survolez ou glissez, flèches
           disponibles
         </p>
       </Reveal>

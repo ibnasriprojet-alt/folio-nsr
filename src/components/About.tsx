@@ -56,7 +56,7 @@ export function About() {
             </div>
             <div className="flex items-center gap-3">
               <GraduationCap size={18} className="text-accent" />
-              <span className="text-sm">BTS SIO — SISR</span>
+              <span className="text-sm">BTS SIO SISR</span>
             </div>
             <div className="border-t border-border pt-4">
               <p className="mb-3 text-sm font-semibold">En recherche de</p>

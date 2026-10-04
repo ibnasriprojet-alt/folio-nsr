@@ -145,7 +145,7 @@ export function Marquee({
         </div>
       </div>
 
-      {/* Flèches manuelles — stop auto puis pause 2,5 s */}
+      {/* Flèches manuelles : stop auto puis pause 2,5 s */}
       <div className="absolute -top-12 right-0 z-10 flex gap-2">
         <button
           type="button"
