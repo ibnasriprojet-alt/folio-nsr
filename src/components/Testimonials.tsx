@@ -57,10 +57,14 @@ export function Testimonials() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <Marquee speed={55}>
+        <Marquee
+          speed={55}
+          label="Témoignages des professeurs, défilement horizontal"
+        >
           {doubled.map((t, i) => (
             <figure
               key={`${t.author}-${i}`}
+              aria-hidden={i >= testimonials.length || undefined}
               className="flex w-[340px] flex-shrink-0 flex-col justify-between rounded-xl border border-border bg-card p-6 sm:w-[380px]"
             >
               <div>

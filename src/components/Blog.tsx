@@ -12,14 +12,25 @@ import { Reveal } from '@/components/Reveal'
 import { Badge } from '@/components/ui/badge'
 import { blogPosts } from '@/lib/data'
 
-function BlogCard({ post }: { post: (typeof blogPosts)[number] }) {
+function BlogCard({
+  post,
+  duplicate = false,
+}: {
+  post: (typeof blogPosts)[number]
+  duplicate?: boolean
+}) {
   return (
-    <article className="group flex w-[320px] flex-shrink-0 flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-accent/40 sm:w-[360px]">
+    <article
+      aria-hidden={duplicate || undefined}
+      className="group flex w-[320px] flex-shrink-0 flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-accent/40 sm:w-[360px]"
+    >
       {/* Image */}
       <div className="relative h-40 overflow-hidden">
         <img
           src={post.image}
           alt={post.title}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute left-3 top-3">
@@ -51,6 +62,7 @@ function BlogCard({ post }: { post: (typeof blogPosts)[number] }) {
               href={post.source}
               target="_blank"
               rel="noreferrer"
+              tabIndex={duplicate ? -1 : undefined}
               className="inline-flex items-center gap-1 text-accent hover:underline"
             >
               {post.sourceName} <ExternalLink size={10} />
@@ -61,6 +73,7 @@ function BlogCard({ post }: { post: (typeof blogPosts)[number] }) {
         <div className="flex flex-wrap gap-3 border-t border-border pt-3">
           <Link
             to={`/blog/${post.slug}`}
+            tabIndex={duplicate ? -1 : undefined}
             className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-accent"
           >
             <BookOpen size={14} />
@@ -94,9 +107,18 @@ export function Blog() {
         </p>
       </Reveal>
 
-      <Marquee speed={70}>{doubled.map((post, i) => (
-        <BlogCard key={`${post.slug}-${i}`} post={post} />
-      ))}</Marquee>
+      <Marquee
+        speed={70}
+        label="Articles de blog, défilement horizontal"
+      >
+        {doubled.map((post, i) => (
+          <BlogCard
+            key={`${post.slug}-${i}`}
+            post={post}
+            duplicate={i >= blogPosts.length}
+          />
+        ))}
+      </Marquee>
 
       <Reveal delay={0.1} className="mt-8 text-center">
         <p className="text-sm text-muted-foreground">

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
@@ -8,12 +8,15 @@ interface MarqueeProps {
   /** Vitesse d'auto-défilement en px/s (droite → gauche). 0 désactive. */
   speed?: number
   className?: string
+  /** Description pour les technologies d'assistance. */
+  label: string
 }
 
 export function Marquee({
   children,
   speed = 70,
   className,
+  label,
 }: MarqueeProps) {
   const trackRef = useRef<HTMLDivElement>(null)
   const rafRef = useRef(0)
@@ -23,7 +26,6 @@ export function Marquee({
   const dragStartRef = useRef({ x: 0, left: 0 })
   const movedRef = useRef(0)
   const pausedRef = useRef(false)
-  const [hovered, setHovered] = useState(false)
 
   const hold = useCallback(() => {
     pausedRef.current = true
@@ -118,31 +120,42 @@ export function Marquee({
     }
   }, [])
 
+  const onKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        moveBy(-1)
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        moveBy(1)
+      }
+    },
+    [moveBy]
+  )
+
   return (
     <div className={cn('relative mt-12', className)}>
       <div
         ref={trackRef}
+        role="group"
+        aria-label={label}
+        tabIndex={0}
         className="marquee-scroll group cursor-grab touch-pan-y overflow-hidden active:cursor-grabbing"
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
         onClickCapture={onClickCapture}
-        onMouseEnter={() => setHovered(true)}
+        onKeyDown={onKeyDown}
+        onMouseEnter={hold}
         onMouseLeave={() => {
-          setHovered(false)
           if (pauseTimerRef.current) window.clearTimeout(pauseTimerRef.current)
           pausedRef.current = false
         }}
+        onFocus={hold}
+        onBlur={() => releaseAfter(1500)}
       >
-        <div
-          className={cn(
-            'marquee-scroll-track flex gap-6 py-2',
-            hovered && 'marquee-paused'
-          )}
-        >
-          {children}
-        </div>
+        <div className="flex gap-6 py-2">{children}</div>
       </div>
 
       {/* Flèches manuelles : stop auto puis pause 2,5 s */}

@@ -86,6 +86,28 @@ html {
   body {
     @apply bg-background text-foreground antialiased;
   }
+
+  /* Focus clavier visible partout (accessibility.md › Speech) */
+  a:focus-visible,
+  button:focus-visible,
+  [role='button']:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* Respecter « Réduire la transparence » (accessibility.md › Vision) */
+@media (prefers-reduced-transparency: reduce) {
+  .backdrop-blur-md,
+  .backdrop-blur {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  header {
+    background-color: var(--background) !important;
+  }
 }
 
 ::selection {
