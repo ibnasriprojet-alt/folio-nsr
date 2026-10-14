@@ -120,7 +120,7 @@ export const projects = [
     year: '2025',
     image: '/placeholder-cisco.svg',
     description:
-      'Simulation d\'un réseau multi-sites avec Cisco Packet Tracer : routage OSPF, adressage IP et拓 topologie chaînée.',
+      'Simulation d\'un réseau multi-sites avec Cisco Packet Tracer : routage OSPF, adressage IP et topologie chaînée.',
     tags: ['Cisco', 'Packet Tracer', 'OSPF', 'Routage'],
     pdf: '/Simulation Reseau Cisco.pdf',
     download: '/Simulation_Reseau_Cisco.pkt',
